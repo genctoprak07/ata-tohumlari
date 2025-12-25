@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-gray-800;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-earth hover:bg-earth-600 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-medium shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-nature hover:bg-nature-600 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-medium shadow-md hover:shadow-lg;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-earth-700 mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-gray-600 max-w-3xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-earth to-nature bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-organic {
+    @apply bg-gradient-to-br from-earth-100 via-cream to-nature-100;
+  }
+}
