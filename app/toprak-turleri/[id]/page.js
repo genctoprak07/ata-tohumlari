@@ -43,15 +43,15 @@ export default function SoilTypePage({ params }) {
                 <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                         {/* Left: Image */}
-                        <div className="relative h-96 lg:h-auto bg-gradient-to-br from-earth-200 via-nature-100 to-cream">
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-center p-8">
-                                    <div className="w-32 h-32 mx-auto mb-6 bg-white rounded-full flex items-center justify-center shadow-xl">
-                                        <Sprout className="w-16 h-16 text-nature" />
-                                    </div>
-                                    <h2 className="text-3xl font-bold text-earth-700">{soil.name}</h2>
-                                    <p className="text-gray-600 mt-2">{soil.category}</p>
-                                </div>
+                        <div className="relative h-96 lg:h-auto">
+                            <Image
+                                src={soil.image}
+                                alt={soil.name}
+                                fill
+                                className="object-cover"
+                            />
+                            <div className="absolute top-6 left-6 bg-nature text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+                                {soil.category}
                             </div>
                         </div>
 
@@ -125,8 +125,13 @@ export default function SoilTypePage({ params }) {
                                 className="group"
                             >
                                 <div className="card">
-                                    <div className="bg-gradient-to-br from-earth-100 to-nature-100 p-8 flex items-center justify-center h-48">
-                                        <Sprout className="w-16 h-16 text-nature group-hover:scale-110 transition-transform" />
+                                    <div className="relative h-48 overflow-hidden">
+                                        <Image
+                                            src={otherSoil.image}
+                                            alt={otherSoil.name}
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                        />
                                     </div>
                                     <div className="p-4">
                                         <h3 className="text-xl font-bold text-earth-700 mb-2 group-hover:text-earth transition-colors">
